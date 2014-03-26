@@ -7,8 +7,8 @@
     <packaging>war</packaging>
     <version>1.0</version>
 
-    <groupId>com.google.appengine.demos</groupId>
-    <artifactId>appengine-try-java</artifactId>
+    <groupId>com.recetatordeveloperteam.app</groupId>
+    <artifactId>recetator-api</artifactId>
 
         <pluginRepositories>
         <pluginRepository>
@@ -103,4 +103,8 @@
         </plugins>
     </build>
 
+    <organization>
+    	<name>Recetator Development Team</name>
+    </organization>
+    <name>Recetator API RESTful</name>
 </project>
