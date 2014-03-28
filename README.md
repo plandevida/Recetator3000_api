@@ -10,8 +10,12 @@ Escrito por : Juan Luis Pérez
 Añadir la URI https://github.com/plandevida/Recetator3000_api.git y vuestros datos de acceso.
 
 3. Compilar y resolver dependencias.
+Para ello , ir a las propiedades del proyecto y eliminar las librerias problematicas.
+Se redescargarán al hacer MAVEN INSTALL
+
 
 4. Para poder 'compilar' por así decirlo , se usa el MAVEN con la opción install.
+Seleccionar RUN AS-> MAVEN INSTALL 
 
 5. Para lanzar el servidor local para probar , se lanza en Run Configurations como Web Service.
 
