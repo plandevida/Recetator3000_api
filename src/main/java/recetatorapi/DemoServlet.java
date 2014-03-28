@@ -1,4 +1,4 @@
-package myapp;
+package recetatorapi;
 
 import java.io.IOException;
 import javax.servlet.http.*;
