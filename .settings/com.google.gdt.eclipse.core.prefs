@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
-lastWarOutDir=C\:/Users/Development/git/Recetator3000_api/target/recetator-api-1.0
+lastWarOutDir=C\:/hlocal/git/Recetator3000_api/war
 warSrcDir=target/recetator-api-1.0
-warSrcDirIsOutput=false
+warSrcDirIsOutput=true
