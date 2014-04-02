@@ -40,3 +40,16 @@ LOS COMMITS ->>>>>> IMPORTANCIA CAPITAL
 
  El index.html que hay que modificar es el de la carpeta src, no el de la carpeta target
  
+ 
+ 
+ PARA HACER EL DEPLOY DE LA APP
+ 
+ 1) Hay que asegurarse que la variable de sistema JAVA_HOME apunte al JDK 1.7 que tenemos en local
+ Si la variable no existe hay que crearla
+ Valor por ejemplo C:\Program~1\Java\jdk1.7.0_17
+ 
+ 2) En el directorio raiz de nuestro Eclipse hay que modificar el eclipse.ini y añadir 
+ AL PRINCIPIO DEL ARCHIVO Y EN DIFERENTES LINEAS <- importante, si no peta:
+ 
+ -vm
+<Lo mismo que habeis puesto en JAVA_HOME>\bin\javaw.exe
