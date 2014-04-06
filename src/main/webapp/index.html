@@ -6,14 +6,22 @@
   </head>
   <body>
     <div id="result">Loading...</div>
+	<br></br>
+	<div id="loginresult">Loggin in....</div>
 
     <script>
-$(document).ready(function() {
-  $.getJSON('/demo', function(data) {
-    $('#result').html("Hello, " + data.name);
-    $('#result').html("Primera prueba desde hogar dulce hogar " + data.name2);
-  });
-});
+		$(document).ready(function() {
+			
+		  $.getJSON('/demo', function(data) {
+			  
+		    $('#result').html("Hello, " + data.name);
+		    $('#result').append("Primera prueba desde hogar dulce hogar " + data.name2);
+		  });
+		  
+		 $.getJSON('/login', function(data) {
+			 $('#loginresult').html("Has logeado " + data.respuesta);
+		 });
+		});
     </script>
   </body>
 </html>

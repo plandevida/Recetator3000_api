@@ -1,4 +1,4 @@
-Instrucciones a seguir:
+﻿Instrucciones a seguir:
 
 Se recomienda utilizar una instalación limpia de Eclipse Kepler independiente
 Importante: No funciona con un SDK < 1.7
@@ -16,7 +16,7 @@ En vez de usar el repositorio de Kepler, escogemos el de Google con esta URL
 http://dl.google.com/eclipse/plugin/4.3
 
 Instalamos el   Google Plugin for Eclipse (required) completo y en el apartado SDK´s escogemos
-   Google App Engine Java SDK 1.9.1	1.9.1	
+   Google App Engine Java SDK 1.9.x	
 Una vez instalado hay que comprobar que el App Engine Java SDK está  incluido en el Build
 Path del proyecto. Si no lo está basta con darle a añadir libreria -> Google App Engine y 
 seleccionar el SDK correspondiente

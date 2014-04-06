@@ -1,2 +1,4 @@
 /target
 .classpath
+.settings/com.google.appengine.eclipse.core.prefs
+.classpath
