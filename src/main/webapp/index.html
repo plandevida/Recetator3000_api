@@ -18,7 +18,7 @@
 		    $('#result').append("Primera prueba desde hogar dulce hogar " + data.name2);
 		  });
 		  
-		 $.getJSON('/login', function(data) {
+		 $.getJSON('/login?loginname=user&passed=password', function(data) {
 			 $('#loginresult').html("Has logeado " + data.respuesta);
 		 });
 		});

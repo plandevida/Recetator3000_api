@@ -13,10 +13,12 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		
-		String loginName = (String) req.getAttribute("loginname");
-		String pass = (String) req.getAttribute("passwd");
+		String loginName = (String) req.getParameter("loginname");
+		String pass = (String) req.getParameter("passwd");
+		
+		System.out.println(loginName + " " + pass);
 		
 		resp.setContentType("text/plain");
-		resp.getWriter().println("[ \"respuesta\": \"correctamente\" ]");
+		resp.getWriter().println("{ \"respuesta\": \"correctamente\" }");
 	}
 }
