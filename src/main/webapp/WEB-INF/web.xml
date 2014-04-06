@@ -7,11 +7,19 @@
     <servlet>
         <servlet-name>demo</servlet-name>
         <servlet-class>recetatorapi.DemoServlet</servlet-class>
+      </servlet> 
+       <servlet>
+         <servlet-name>getrecetas</servlet-name>
+        <servlet-class>recetatorapi.GetRecetas</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>demo</servlet-name>
         <url-pattern>/demo</url-pattern>
-    </servlet-mapping>
+       </servlet-mapping>
+         <servlet-mapping>
+        <servlet-name>getrecetas</servlet-name>
+        <url-pattern>/getrecetas</url-pattern>
+        </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>

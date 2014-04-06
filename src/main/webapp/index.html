@@ -10,8 +10,8 @@
     <script>
 $(document).ready(function() {
   $.getJSON('/demo', function(data) {
-    $('#result').html("Hello, " + data.name);
-    $('#result').html("Primera prueba desde hogar dulce hogar " + data.name2);
+    $('#result').html("Hello, " + data.name + '<br>');
+    $('#result').append("Primera prueba desde hogar dulce hogar " + data.name2);
   });
 });
     </script>
