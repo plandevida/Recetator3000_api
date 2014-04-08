@@ -1,6 +1,0 @@
-<project name="recetator-api">
-<target name="place persistence.xml">
-    <mkdir dir="target\recetator-api-1.0\WEB-INF\classes\META-INF" />
-    <copy file="persistence.xml" todir="target\recetator-api-1.0\WEB-INF\classes\META-INF" />
-</target>
-</project>
