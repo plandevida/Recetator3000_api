@@ -1,4 +1,4 @@
-package com.recetatordeveloperteam.api;
+package com.recetatordeveloperteam.EMF;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

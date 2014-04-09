@@ -1,4 +1,4 @@
-package com.recetatordeveloperteam.api;
+package Entities;
 
 import java.util.HashSet;
 import java.util.Set;

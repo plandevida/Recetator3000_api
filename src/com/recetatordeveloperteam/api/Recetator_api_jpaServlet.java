@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Entities.Employee;
+import Entities.Proyecto;
+
+import com.recetatordeveloperteam.EMF.EMF;
+
 @SuppressWarnings("serial")
 public class Recetator_api_jpaServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
