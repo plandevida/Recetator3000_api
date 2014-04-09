@@ -3,35 +3,51 @@ package com.recetatordeveloperteam.Entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+
+import com.google.appengine.api.datastore.Key;
 
 @Entity
 public class Employee {
 	@Id
-	@SequenceGenerator(name="SEQ1", sequenceName="MY_SEQ", initialValue=1, allocationSize=10)
-	private long id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+     private Key id;
+
 	private String nombre;
+	@ManyToOne(cascade = CascadeType.REFRESH,fetch = FetchType.LAZY, optional = true)
+	private Proyecto proyecto;
 	
-	@ManyToMany
-	private Set<Proyecto> proyecto;
-	
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
+	}
+
 	public Employee() {
-		proyecto = new HashSet<>();
+	
 	}
 	
 	public String getNombre() {
 		return nombre;
 	}
 
-	public long getKey() {
+	public Key getKey() {
 		// TODO Auto-generated method stub
 		return this.id;
 	}
 
-	public void setKey(long id) {
+	public void setKey(Key id) {
 		this.id = id;
 	}
 	
