@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.datastore.Key;
 import com.recetatordeveloperteam.receta.entidad.Receta;
 import com.recetatordeveloperteam.receta.sa.SAReceta;
 import com.recetatordeveloperteam.receta.sa.imp.SARecetaImp;
@@ -36,7 +37,15 @@ public class RecetasServlet extends HttpServlet {
 			
 			SAReceta sa = new SARecetaImp();
 			
-			sa.addReceta(nombre, ingredientes, desc, cat, dif, calorias, tiempo, ale);
+			Key id = sa.addReceta(nombre, ingredientes, desc, cat, dif, calorias, tiempo, ale);
+			
+			try {
+				res.setContentType("text/plain");
+				res.getWriter().println("{ \"id\": \""+id+"\" }");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else {
 			SAReceta sa = new SARecetaImp();

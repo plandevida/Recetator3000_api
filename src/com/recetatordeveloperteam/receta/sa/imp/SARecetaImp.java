@@ -51,15 +51,15 @@ public class SARecetaImp implements SAReceta {
 		List<Receta> lista = new ArrayList<>();
 		
 		EntityManager em = EMF.get().createEntityManager();
-//		em.getTransaction().begin();
 		
 		CriteriaBuilder criteriaB = em.getCriteriaBuilder();
 		CriteriaQuery<Receta> query = criteriaB.createQuery(Receta.class);
 		Root<Receta> entityRoot = query.from(Receta.class);
+		query.select(entityRoot);
 		
-		lista = em.createQuery(query).getResultList();
-		
-//		em.getTransaction().commit();
+		em.getTransaction().begin();
+		lista = em.createQuery(query).getResultList();		
+		em.getTransaction().commit();
 		
 		return lista;
 	}
