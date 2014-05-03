@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Añadir una receta</title>
+</head>
+<body>
+
+	<form action="recetas" method="get" accept-charset="utf-8">
+	  
+	  	Nombre de la receta: <input type="text" name ="nombrereceta"><br>
+	  	Ingrediente: <input type="text" name="ingrediente"><br>
+	  	Descripción: <input type="text" name="descpricion"><br>
+	  	Categoría: <select name="categorias">
+	  				<option value="carne">Carne</option>
+	  				<option value="pescado">Pescado</option>
+	  				<option value="pasta">Pasta</option>
+	  			</select>
+	  			<br>
+	  	Dificultad:  <select name="dificultad">
+	  				<option value="facil">Facil</option>
+	  				<option value="media">Media</option>
+	  				<option value="dificil">Dificil</option>
+	  				<option value="muydificil">Muy Dificil</option>
+	  			</select>
+	  			<br>
+	  	Número de calorías:  <input type="number" name="calorias"><br>
+	  	Tiempo de preparación:  <input type="number" name="tiempo"><br>
+	  	Alergia: <select name="alergias">
+	  				<option value="diabeticos">Diabéticos</option>
+	  				<option value="celiacos">Celíacos</option>
+	  			</select>
+	  
+		<p><input type="submit" value="Continue &rarr;"/></p>
+	</form>
+
+</body>
+</html>

@@ -1,13 +1,11 @@
 package com.recetatordeveloperteam.api;
 import java.io.IOException;
-import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.appengine.api.datastore.Key;
 import com.recetatordeveloperteam.EMF.EMF;
 import com.recetatordeveloperteam.Entities.Employee;
 import com.recetatordeveloperteam.Entities.Proyecto;
