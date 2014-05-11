@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>Recetator_api_jpa</servlet-name>
-		<servlet-class>com.recetatordeveloperteam.api.Recetator_api_jpaServlet</servlet-class>
+		<servlet-class>com.recetatordeveloperteam.other.api.Recetator_api_jpaServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Recetator_api_jpa</servlet-name>
@@ -15,7 +15,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>login</servlet-name>
-		<servlet-class>com.recetatordeveloperteam.api.LoginServlet</servlet-class>
+		<servlet-class>com.recetatordeveloperteam.other.api.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>recetas</servlet-name>
-		<servlet-class>com.recetatordeveloperteam.api.RecetasServlet</servlet-class>
+		<servlet-class>com.recetatordeveloperteam.other.api.RecetasServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>recetas</servlet-name>
