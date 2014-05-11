@@ -3,7 +3,7 @@ package com.recetatordeveloperteam.presentacion.comandos.receta;
 import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.ComandoRespuesta;
 
-public class ComandoMarcarReceta implements Comando{
+public class ComandoMarcarReceta implements Comando {
 
 	@Override
 	public ComandoRespuesta execute(Object datos) {

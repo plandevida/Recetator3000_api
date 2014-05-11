@@ -1,11 +1,10 @@
 package com.recetatordeveloperteam.presentacion.comandos;
 
 public class ComandoRespuesta {
-	
+
 	private IDEventos evento;
 	private Object datos;
 
-	
 	public IDEventos getEvento() {
 		// begin-user-code
 		return evento;
@@ -18,9 +17,6 @@ public class ComandoRespuesta {
 		// end-user-code
 	}
 
-	
-
-	
 	public Object getDatos() {
 		// begin-user-code
 		return datos;
@@ -29,7 +25,7 @@ public class ComandoRespuesta {
 
 	public void setDatos(Object datos) {
 		// begin-user-code
-		this.datos=datos;
+		this.datos = datos;
 		// end-user-code
 	}
 }

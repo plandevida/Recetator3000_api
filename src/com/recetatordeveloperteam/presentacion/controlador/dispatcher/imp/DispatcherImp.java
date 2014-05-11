@@ -8,7 +8,7 @@ public class DispatcherImp extends Dispatcher {
 	@Override
 	public void redirect(ComandoRespuesta respuestacomando) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

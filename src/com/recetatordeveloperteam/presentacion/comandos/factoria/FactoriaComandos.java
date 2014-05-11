@@ -4,10 +4,10 @@ import com.recetatordeveloperteam.presentacion.comandos.factoria.imp.FactoriaCom
 
 public class FactoriaComandos {
 	private FactoriaComandos instance;
-	
-	public FactoriaComandos getInstance(){
-		if(instance==null){
-			this.instance=new FactoriaComandosImp();
+
+	public FactoriaComandos getInstance() {
+		if (instance == null) {
+			this.instance = new FactoriaComandosImp();
 		}
 		return instance;
 	}

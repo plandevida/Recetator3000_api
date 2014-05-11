@@ -13,13 +13,13 @@ import com.google.appengine.api.datastore.Key;
 @Entity
 public class Employee {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-     private Key id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Key id;
 
 	private String nombre;
-	@ManyToOne(cascade = CascadeType.REFRESH,fetch = FetchType.LAZY, optional = true)
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, optional = true)
 	private Proyecto proyecto;
-	
+
 	public Proyecto getProyecto() {
 		return proyecto;
 	}
@@ -29,9 +29,9 @@ public class Employee {
 	}
 
 	public Employee() {
-	
+
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -44,8 +44,8 @@ public class Employee {
 	public void setKey(Key id) {
 		this.id = id;
 	}
-	
-	public void setNombre(String arg0){
-		this.nombre=arg0;
+
+	public void setNombre(String arg0) {
+		this.nombre = arg0;
 	}
 }

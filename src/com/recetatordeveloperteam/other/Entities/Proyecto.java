@@ -18,17 +18,17 @@ import com.google.appengine.api.datastore.Key;
 public class Proyecto {
 
 	@Id
-     private long id;
+	private long id;
 
 	private String nombre;
-	
-	@OneToMany(mappedBy ="proyecto", cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL)
 	private Set<Employee> empleados;
 
 	public Proyecto() {
 		empleados = new HashSet<>();
 	}
-	
+
 	public long getId() {
 		return id;
 	}
@@ -52,6 +52,5 @@ public class Proyecto {
 	public void setEmpleados(Set<Employee> empleados) {
 		this.empleados = empleados;
 	}
-	
-	
+
 }

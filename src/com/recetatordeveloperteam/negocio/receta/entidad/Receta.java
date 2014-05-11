@@ -15,8 +15,8 @@ import com.recetatordeveloperteam.negocio.recetas.Dificultades;
 @Entity
 public class Receta {
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Key id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Key id;
 
 	private String nombre, descripcion;
 	private List<String> ingredientes;
@@ -25,9 +25,11 @@ public class Receta {
 	private Integer calorias;
 	private Float tiempo;
 	private Alergias alergias;
-	
-	public Receta(String nombreReceta, List<String> ingredientes, String descripcion, Categorias categoria, Dificultades dificultad, Integer numeroCalorias, Float tiempoPreparacion, Alergias alergia) {
-		
+
+	public Receta(String nombreReceta, List<String> ingredientes,
+			String descripcion, Categorias categoria, Dificultades dificultad,
+			Integer numeroCalorias, Float tiempoPreparacion, Alergias alergia) {
+
 		this.nombre = nombreReceta;
 		this.descripcion = descripcion;
 		this.ingredientes = ingredientes;
@@ -37,7 +39,7 @@ public class Receta {
 		this.tiempo = tiempoPreparacion;
 		this.alergias = alergia;
 	}
-	
+
 	public Key getKey() {
 		return this.id;
 	}
@@ -109,5 +111,5 @@ public class Receta {
 	public void setAlergias(Alergias alergias) {
 		this.alergias = alergias;
 	}
-	
+
 }
