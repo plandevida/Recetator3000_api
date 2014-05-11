@@ -1,6 +1,7 @@
 package com.recetatordeveloperteam.presentacion.controlador.aplicacion.imp;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,25 +17,33 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 
 	private static final long serialVersionUID = 5688085232129774014L;
 
+	@SuppressWarnings("unchecked")
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		String ruta = req.getRequestURI();
 		Comando comando = null;
+		Map<String,String[]> m = null;
 		switch(ruta)
 		{
 		
-		case "/addreceta" : comando = FactoriaComandos.getInstance().nuevoComando(IDEventos.EVENTO_ALTA_RECETA);
-		resp.getWriter().println(req.getParameter("ingredientes"));
+		case "/addreceta" : 
+		comando = FactoriaComandos.getInstance().nuevoComando(IDEventos.EVENTO_ALTA_RECETA);
+		m = req.getParameterMap();
+		
+		//String[] j = m.get("ingredientes");
+		//resp.getWriter().println(j[0]);
 		
 		break;
-			
-		default : resp.setContentType("text/plain");
-			resp.getWriter().println("esta no es la pagina que buscas ;D");
+	
+		default :
+			comando = FactoriaComandos.getInstance().nuevoComando(IDEventos.NOT_FOUND);
+			break;
 		}
 		
 		
 		
-		//ComandoRespuesta rc = comando.execute(void);
+		ComandoRespuesta rc = comando.execute((Object)m);
+		resp.getWriter().println(rc.getDatos());
 			
 			
 
