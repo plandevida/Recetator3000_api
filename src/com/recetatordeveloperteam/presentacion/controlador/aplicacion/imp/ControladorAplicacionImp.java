@@ -18,35 +18,32 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 	private static final long serialVersionUID = 5688085232129774014L;
 
 	@SuppressWarnings("unchecked")
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException
-	{
+	protected void service(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
 		String ruta = req.getRequestURI();
 		Comando comando = null;
-		Map<String,String[]> m = null;
-		switch(ruta)
-		{
-		
-		case "/addreceta" : 
-		comando = FactoriaComandos.getInstance().nuevoComando(IDEventos.EVENTO_ALTA_RECETA);
-		m = req.getParameterMap();
-		
-		//String[] j = m.get("ingredientes");
-		//resp.getWriter().println(j[0]);
-		
-		break;
-	
-		default :
-			comando = FactoriaComandos.getInstance().nuevoComando(IDEventos.NOT_FOUND);
+		Map<String, String[]> m = null;
+		switch (ruta) {
+
+		case "/addreceta":
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.EVENTO_ALTA_RECETA);
+			m = req.getParameterMap();
+
+			// String[] j = m.get("ingredientes");
+			// resp.getWriter().println(j[0]);
+
+			break;
+
+		default:
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.NOT_FOUND);
 			break;
 		}
-		
-		
-		
-		ComandoRespuesta rc = comando.execute((Object)m);
+
+		ComandoRespuesta rc = comando.execute((Object) m);
 		resp.getWriter().println(rc.getDatos());
-			
-			
 
 	}
-	
+
 }

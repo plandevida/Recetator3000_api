@@ -13,6 +13,6 @@ public abstract class FactoriaComandos {
 		}
 		return instance;
 	}
-	
+
 	public abstract Comando nuevoComando(IDEventos id_comando);
 }

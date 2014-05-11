@@ -11,22 +11,23 @@ public class FactoriaComandosImp extends FactoriaComandos {
 	@Override
 	public Comando nuevoComando(IDEventos id_comando) {
 
-		
 		Comando c = null;
-		switch(id_comando)
-		{
-		
-		case EVENTO_ALTA_RECETA: c = new ComandoAltaReceta();
-		break;
-		case NOT_FOUND: c = new ComandoNoEncontrado();
-		break;
-		default: c = new ComandoNoEncontrado();
+		switch (id_comando) {
+
+		case EVENTO_ALTA_RECETA:
+			c = new ComandoAltaReceta();
 			break;
-		
+		case NOT_FOUND:
+			c = new ComandoNoEncontrado();
+			break;
+		default:
+			c = new ComandoNoEncontrado();
+			break;
+
 		}
-		
+
 		return c;
-		
+
 	}
 
 }

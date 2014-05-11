@@ -17,4 +17,6 @@ public interface SAReceta {
 			Integer numeroCalorias, Float tiempoPreparacion, Alergias alergia);
 
 	public List<Receta> getAllRecetas();
+
+	public Key addReceta(String string);
 }

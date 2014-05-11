@@ -46,22 +46,41 @@ public class SARecetaImp implements SAReceta {
 		return recetaInsertada != null ? recetaInsertada.getKey() : null;
 	}
 
+	public Key addReceta(String nombreReceta) {
+
+		Receta recetaInsertada = null;
+
+		if (nombreReceta != null && !"".equals(nombreReceta)) {
+
+			recetaInsertada = new Receta(nombreReceta);
+
+			EntityManager em = EMF.get().createEntityManager();
+			em.getTransaction().begin();
+
+			em.persist(recetaInsertada);
+
+			em.getTransaction().commit();
+		}
+
+		return recetaInsertada != null ? recetaInsertada.getKey() : null;
+	}
+
 	@Override
 	public List<Receta> getAllRecetas() {
 
-		/*
-		 * List<Receta> lista = new ArrayList<>();
-		 * 
-		 * EntityManager em = EMF.get().createEntityManager();
-		 * 
-		 * CriteriaBuilder criteriaB = em.getCriteriaBuilder();
-		 * CriteriaQuery<Receta> query = criteriaB.createQuery(Receta.class);
-		 * Root<Receta> entityRoot = query.from(Receta.class);
-		 * query.select(entityRoot);
-		 * 
-		 * em.getTransaction().begin(); lista =
-		 * em.createQuery(query).getResultList(); em.getTransaction().commit();
-		 */
+		List<Receta> lista = new ArrayList<>();
+
+		EntityManager em = EMF.get().createEntityManager();
+
+		CriteriaBuilder criteriaB = em.getCriteriaBuilder();
+		CriteriaQuery<Receta> query = criteriaB.createQuery(Receta.class);
+		Root<Receta> entityRoot = query.from(Receta.class);
+		query.select(entityRoot);
+
+		em.getTransaction().begin();
+		lista = em.createQuery(query).getResultList();
+		em.getTransaction().commit();
+
 		return null;
 	}
 }

@@ -40,6 +40,10 @@ public class Receta {
 		this.alergias = alergia;
 	}
 
+	public Receta(String nombreReceta) {
+		this.nombre = nombreReceta;
+	}
+
 	public Key getKey() {
 		return this.id;
 	}
