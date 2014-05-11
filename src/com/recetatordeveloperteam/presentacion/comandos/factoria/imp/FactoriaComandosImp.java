@@ -5,6 +5,7 @@ import com.recetatordeveloperteam.presentacion.comandos.IDEventos;
 import com.recetatordeveloperteam.presentacion.comandos.factoria.FactoriaComandos;
 import com.recetatordeveloperteam.presentacion.comandos.otros.ComandoNoEncontrado;
 import com.recetatordeveloperteam.presentacion.comandos.receta.ComandoAltaReceta;
+import com.recetatordeveloperteam.presentacion.comandos.receta.ComandoListarRecetas;
 
 public class FactoriaComandosImp extends FactoriaComandos {
 
@@ -16,6 +17,9 @@ public class FactoriaComandosImp extends FactoriaComandos {
 
 		case EVENTO_ALTA_RECETA:
 			c = new ComandoAltaReceta();
+			break;
+		case EVENTO_LISTAR_RECETAS:
+			c = new ComandoListarRecetas();
 			break;
 		case NOT_FOUND:
 			c = new ComandoNoEncontrado();

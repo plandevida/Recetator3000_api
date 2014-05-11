@@ -81,6 +81,6 @@ public class SARecetaImp implements SAReceta {
 		lista = em.createQuery(query).getResultList();
 		em.getTransaction().commit();
 
-		return null;
+		return lista;
 	}
 }

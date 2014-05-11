@@ -34,7 +34,10 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 			// resp.getWriter().println(j[0]);
 
 			break;
-
+		case "/getrecetas":	
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.EVENTO_LISTAR_RECETAS);
+			break;
 		default:
 			comando = FactoriaComandos.getInstance().nuevoComando(
 					IDEventos.NOT_FOUND);
