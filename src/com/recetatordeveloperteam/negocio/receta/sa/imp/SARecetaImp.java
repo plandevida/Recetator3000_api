@@ -10,11 +10,11 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.labs.repackaged.org.json.JSONException;
 import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.recetatordeveloperteam.integracion.EMF.EMF;
+import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
-import com.recetatordeveloperteam.negocio.recetas.Alergias;
-import com.recetatordeveloperteam.negocio.recetas.Categorias;
-import com.recetatordeveloperteam.negocio.recetas.Dificultades;
 
 public class SARecetaImp implements SAReceta {
 
@@ -94,7 +94,7 @@ public class SARecetaImp implements SAReceta {
 		for(Alergias a : Alergias.values())
 		{
 			try {
-				salida.put(a.name(),a.ordinal());
+				salida.put(String.valueOf(a.ordinal()),a.name());
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

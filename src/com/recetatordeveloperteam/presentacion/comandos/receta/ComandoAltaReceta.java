@@ -7,9 +7,9 @@ import java.util.Map.Entry;
 
 import com.google.appengine.api.datastore.Key;
 import com.recetatordeveloperteam.negocio.FactorySA.FactorySA;
-import com.recetatordeveloperteam.negocio.recetas.Alergias;
-import com.recetatordeveloperteam.negocio.recetas.Categorias;
-import com.recetatordeveloperteam.negocio.recetas.Dificultades;
+import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.ComandoRespuesta;
 import com.recetatordeveloperteam.presentacion.comandos.IDEventos;

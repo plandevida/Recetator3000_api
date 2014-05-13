@@ -1,4 +1,4 @@
-package com.recetatordeveloperteam.negocio.recetas;
+package com.recetatordeveloperteam.negocio.receta.entidad;
 
 public enum Dificultades {
 

@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.appengine.api.datastore.Key;
+import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
+import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
 import com.recetatordeveloperteam.negocio.receta.sa.imp.SARecetaImp;
-import com.recetatordeveloperteam.negocio.recetas.Alergias;
-import com.recetatordeveloperteam.negocio.recetas.Categorias;
-import com.recetatordeveloperteam.negocio.recetas.Dificultades;
 
 public class RecetasServlet extends HttpServlet {
 

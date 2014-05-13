@@ -8,9 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.google.appengine.api.datastore.Key;
-import com.recetatordeveloperteam.negocio.recetas.Alergias;
-import com.recetatordeveloperteam.negocio.recetas.Categorias;
-import com.recetatordeveloperteam.negocio.recetas.Dificultades;
 
 @Entity
 public class Receta {
