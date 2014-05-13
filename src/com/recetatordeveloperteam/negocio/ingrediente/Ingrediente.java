@@ -13,4 +13,6 @@ public class Ingrediente {
 	private String nombre;
 	
 	private String unidad;
+	
+	private float calorias;
 }
