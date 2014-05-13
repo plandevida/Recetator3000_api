@@ -10,7 +10,7 @@ public class ComandoNoEncontrado implements Comando {
 	public ComandoRespuesta execute(Object datos) {
 
 		ComandoRespuesta cr = new ComandoRespuesta();
-		cr.setDatos("esta no es la pagina que buscas xD");
+		cr.setDatos("<b>Esta no es la pagina que buscas xD</b>");
 		cr.setEvento(IDEventos.NOT_FOUND);
 
 		return cr;

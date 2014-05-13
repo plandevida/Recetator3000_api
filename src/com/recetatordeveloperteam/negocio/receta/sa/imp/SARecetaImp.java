@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.*;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.labs.repackaged.org.json.JSONException;
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.recetatordeveloperteam.integracion.EMF.EMF;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
@@ -82,5 +84,26 @@ public class SARecetaImp implements SAReceta {
 		em.getTransaction().commit();
 
 		return lista;
+	}
+
+	@Override
+	public JSONObject getAlergias() {
+		
+		JSONObject salida = new JSONObject();
+		
+		for(Alergias a : Alergias.values())
+		{
+			try {
+				salida.put(a.name(),a.ordinal());
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		return salida;
+		
 	}
 }

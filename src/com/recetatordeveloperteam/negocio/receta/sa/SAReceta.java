@@ -3,6 +3,7 @@ package com.recetatordeveloperteam.negocio.receta.sa;
 import java.util.List;
 
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 import com.recetatordeveloperteam.negocio.recetas.Alergias;
 import com.recetatordeveloperteam.negocio.recetas.Categorias;
@@ -19,4 +20,6 @@ public interface SAReceta {
 	public List<Receta> getAllRecetas();
 
 	public Key addReceta(String string);
+
+	public JSONObject getAlergias();
 }

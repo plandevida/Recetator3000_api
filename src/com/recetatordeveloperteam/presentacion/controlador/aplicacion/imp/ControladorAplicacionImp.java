@@ -30,15 +30,20 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 					IDEventos.EVENTO_ALTA_RECETA);
 			m = req.getParameterMap();
 
-			// String[] j = m.get("ingredientes");
-			// resp.getWriter().println(j[0]);
-
 			break;
 		case "/getrecetas":	
 			comando = FactoriaComandos.getInstance().nuevoComando(
 					IDEventos.EVENTO_LISTAR_RECETAS);
 			break;
-		default:
+		case "/getingredientes": 
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.EVENTO_LISTAR_INGREDIENTES);
+			break;
+		case "/getalergias": 
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.EVENTO_LISTAR_ALERGIAS);
+			break;
+					default:
 			comando = FactoriaComandos.getInstance().nuevoComando(
 					IDEventos.NOT_FOUND);
 			break;
