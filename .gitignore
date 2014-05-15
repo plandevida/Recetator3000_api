@@ -4,3 +4,5 @@
 # *.jar
 *.war
 *.ear
+
+war/WEF-INF/classes
