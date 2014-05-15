@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.labs.repackaged.org.json.JSONException;
 import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.recetatordeveloperteam.integracion.EMF.EMF;
-import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
-import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
+import com.recetatordeveloperteam.negocio.FactorySA.FactorySA;
+import com.recetatordeveloperteam.negocio.alergia.Alergia;
+import com.recetatordeveloperteam.negocio.alergia.AlergiaReceta;
+import com.recetatordeveloperteam.negocio.categoria.CategoriaReceta;
+import com.recetatordeveloperteam.negocio.ingrediente.IngredienteReceta;
 import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
@@ -20,9 +25,9 @@ public class SARecetaImp implements SAReceta {
 
 	// TODO cuando se cambie la BBDD seguramente los ingredientes sean una lista
 	// del tipo Ingrediente.
-	public Key addReceta(String nombreReceta, List<String> ingredientes,
-			String descripcion, Categorias categoria, Dificultades dificultad,
-			Integer numeroCalorias, Float tiempoPreparacion, Alergias alergia) {
+	public Key addReceta(String nombreReceta, List<IngredienteReceta> ingredientes,
+			String descripcion, List<CategoriaReceta> categoria, Dificultades dificultad,
+			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia) {
 
 		Receta recetaInsertada = null;
 
@@ -45,7 +50,7 @@ public class SARecetaImp implements SAReceta {
 			em.getTransaction().commit();
 		}
 
-		return recetaInsertada != null ? recetaInsertada.getKey() : null;
+		return recetaInsertada != null ? recetaInsertada.getId() : null;
 	}
 
 	public Key addReceta(String nombreReceta) {
@@ -64,7 +69,7 @@ public class SARecetaImp implements SAReceta {
 			em.getTransaction().commit();
 		}
 
-		return recetaInsertada != null ? recetaInsertada.getKey() : null;
+		return recetaInsertada != null ? recetaInsertada.getId() : null;
 	}
 
 	@Override
@@ -91,17 +96,15 @@ public class SARecetaImp implements SAReceta {
 		
 		JSONObject salida = new JSONObject();
 		
-		for(Alergias a : Alergias.values())
-		{
+		List<Alergia> alergias = FactorySA.getInstance().getSAAlergia().getAllAlergias();
+		
+		for ( Alergia alergia : alergias) {
 			try {
-				salida.put(String.valueOf(a.ordinal()),a.name());
+				salida.put(alergia.getId().toString(), alergia.getNombre());
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 		}
-		
 		
 		return salida;
 		

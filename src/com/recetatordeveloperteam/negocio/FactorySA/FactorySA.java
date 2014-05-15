@@ -1,6 +1,7 @@
 package com.recetatordeveloperteam.negocio.FactorySA;
 
 import com.recetatordeveloperteam.negocio.FactorySA.imp.FactorySAImp;
+import com.recetatordeveloperteam.negocio.alergia.sa.SAAlergia;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
 
 public abstract class FactorySA {
@@ -18,4 +19,6 @@ public abstract class FactorySA {
 	}
 
 	public abstract SAReceta getSARecetas();
+	
+	public abstract SAAlergia getSAAlergia();
 }

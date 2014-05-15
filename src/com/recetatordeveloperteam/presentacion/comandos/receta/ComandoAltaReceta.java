@@ -1,15 +1,9 @@
 package com.recetatordeveloperteam.presentacion.comandos.receta;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.google.appengine.api.datastore.Key;
 import com.recetatordeveloperteam.negocio.FactorySA.FactorySA;
-import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
-import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
-import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.ComandoRespuesta;
 import com.recetatordeveloperteam.presentacion.comandos.IDEventos;
@@ -19,7 +13,9 @@ public class ComandoAltaReceta implements Comando {
 	@Override
 	public ComandoRespuesta execute(Object datos) {
 
+		@SuppressWarnings("unchecked")
 		Map<String, String[]> map1 = (Map<String, String[]>) datos;
+		@SuppressWarnings("unused")
 		String salida = "";
 
 		for (Entry<String, String[]> entry : map1.entrySet()) {

@@ -1,6 +1,5 @@
 package com.recetatordeveloperteam.presentacion.comandos.receta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.recetatordeveloperteam.negocio.FactorySA.FactorySA;
@@ -23,7 +22,7 @@ public class ComandoListarRecetas implements Comando {
 		String salida = "";
 		for( Receta r : m )
 		{
-			salida += r.getKey() + r.getNombre() + '\n';
+			salida += r.getId() + r.getNombre() + '\n';
 		}
 	
 		cr.setDatos(salida);

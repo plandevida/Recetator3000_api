@@ -1,20 +1,10 @@
 package com.recetatordeveloperteam.other.api;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.google.appengine.api.datastore.Key;
-import com.recetatordeveloperteam.negocio.receta.entidad.Alergias;
-import com.recetatordeveloperteam.negocio.receta.entidad.Categorias;
-import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
-import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
-import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
-import com.recetatordeveloperteam.negocio.receta.sa.imp.SARecetaImp;
 
 public class RecetasServlet extends HttpServlet {
 
@@ -24,7 +14,7 @@ public class RecetasServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse res) {
 
 		String nombre = req.getParameter("nombrereceta");
-
+/*
 		if (nombre != null && !"".equals(nombre)) {
 			List<String> ingredientes = new ArrayList<>();
 			ingredientes.add(req.getParameter("ingrediente"));
@@ -66,6 +56,7 @@ public class RecetasServlet extends HttpServlet {
 				}
 			}
 		}
+		*/
 	}
 
 	@Override
