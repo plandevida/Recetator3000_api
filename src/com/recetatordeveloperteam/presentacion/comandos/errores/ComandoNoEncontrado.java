@@ -1,4 +1,4 @@
-package com.recetatordeveloperteam.presentacion.comandos.otros;
+package com.recetatordeveloperteam.presentacion.comandos.errores;
 
 import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.ComandoRespuesta;

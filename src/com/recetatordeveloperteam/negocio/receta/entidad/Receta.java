@@ -28,10 +28,11 @@ public class Receta {
 	private Float tiempo;
 	@Embedded
 	private List<AlergiaReceta> alergias;
+	private TipoCocina tipoCocina;
 
 	public Receta(String nombreReceta, List<IngredienteReceta> ingredientes,
 			String descripcion, List<CategoriaReceta> categoria, Dificultades dificultad,
-			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia) {
+			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia, TipoCocina tipoCocina) {
 
 		this.nombre = nombreReceta;
 		this.descripcion = descripcion;
@@ -40,6 +41,8 @@ public class Receta {
 		this.dificultad = dificultad;
 		this.tiempo = tiempoPreparacion;
 		this.alergias = alergia;
+		this.tipoCocina = tipoCocina;
+		
 	}
 
 	public Receta(String nombreReceta) {
@@ -113,5 +116,14 @@ public class Receta {
 		return 0;
 		
 	}
+
+	public TipoCocina getTipoCocina() {
+		return tipoCocina;
+	}
+
+	public void setTipoCocina(TipoCocina tipoCocina) {
+		this.tipoCocina = tipoCocina;
+	}
+	
 	
 }

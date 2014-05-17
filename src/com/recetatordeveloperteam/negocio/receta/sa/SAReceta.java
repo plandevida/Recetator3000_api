@@ -9,6 +9,7 @@ import com.recetatordeveloperteam.negocio.categoria.CategoriaReceta;
 import com.recetatordeveloperteam.negocio.ingrediente.IngredienteReceta;
 import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
+import com.recetatordeveloperteam.negocio.receta.entidad.TipoCocina;
 
 public interface SAReceta {
 
@@ -16,7 +17,7 @@ public interface SAReceta {
 	// del tipo Ingrediente.
 	public Key addReceta(String nombreReceta, List<IngredienteReceta> ingredientes,
 			String descripcion, List<CategoriaReceta> categoria, Dificultades dificultad,
-			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia);
+			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia, TipoCocina tipoCocina);
 
 	public List<Receta> getAllRecetas();
 

@@ -19,6 +19,7 @@ import com.recetatordeveloperteam.negocio.categoria.CategoriaReceta;
 import com.recetatordeveloperteam.negocio.ingrediente.IngredienteReceta;
 import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
+import com.recetatordeveloperteam.negocio.receta.entidad.TipoCocina;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
 
 public class SARecetaImp implements SAReceta {
@@ -27,7 +28,7 @@ public class SARecetaImp implements SAReceta {
 	// del tipo Ingrediente.
 	public Key addReceta(String nombreReceta, List<IngredienteReceta> ingredientes,
 			String descripcion, List<CategoriaReceta> categoria, Dificultades dificultad,
-			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia) {
+			Integer numeroCalorias, Float tiempoPreparacion, List<AlergiaReceta> alergia, TipoCocina tipoCocina) {
 
 		Receta recetaInsertada = null;
 
@@ -36,11 +37,12 @@ public class SARecetaImp implements SAReceta {
 				&& descripcion != null && categoria != null
 				&& dificultad != null && numeroCalorias != null
 				&& numeroCalorias >= 0 && tiempoPreparacion != null
-				&& tiempoPreparacion >= 0 && alergia != null) {
+				&& tiempoPreparacion >= 0 && alergia != null
+				&& tipoCocina != null) {
 
 			recetaInsertada = new Receta(nombreReceta, ingredientes,
 					descripcion, categoria, dificultad, numeroCalorias,
-					tiempoPreparacion, alergia);
+					tiempoPreparacion, alergia, tipoCocina);
 
 			EntityManager em = EMF.get().createEntityManager();
 			em.getTransaction().begin();

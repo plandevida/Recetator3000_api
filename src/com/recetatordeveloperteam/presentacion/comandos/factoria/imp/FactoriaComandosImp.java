@@ -2,8 +2,9 @@ package com.recetatordeveloperteam.presentacion.comandos.factoria.imp;
 
 import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.IDEventos;
+import com.recetatordeveloperteam.presentacion.comandos.errores.ComandoNoEncontrado;
 import com.recetatordeveloperteam.presentacion.comandos.factoria.FactoriaComandos;
-import com.recetatordeveloperteam.presentacion.comandos.otros.ComandoNoEncontrado;
+import com.recetatordeveloperteam.presentacion.comandos.ingrediente.ComandoAltaIngrediente;
 import com.recetatordeveloperteam.presentacion.comandos.receta.ComandoAltaReceta;
 import com.recetatordeveloperteam.presentacion.comandos.receta.ComandoListarAlergias;
 import com.recetatordeveloperteam.presentacion.comandos.receta.ComandoListarRecetas;
@@ -27,6 +28,10 @@ public class FactoriaComandosImp extends FactoriaComandos {
 			break;
 		case EVENTO_LISTAR_ALERGIAS:
 			c = new ComandoListarAlergias();
+			break;
+			
+		case EVENTO_ALTA_INGREDIENTE:
+			c = new ComandoAltaIngrediente();
 			break;
 			
 		default:

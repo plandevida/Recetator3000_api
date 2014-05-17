@@ -31,6 +31,13 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 			m = req.getParameterMap();
 
 			break;
+			
+		case "/addingrediente":
+			comando = FactoriaComandos.getInstance().nuevoComando(
+					IDEventos.EVENTO_ALTA_INGREDIENTE);
+			m = req.getParameterMap();
+			
+			break;
 		case "/getrecetas":	
 			comando = FactoriaComandos.getInstance().nuevoComando(
 					IDEventos.EVENTO_LISTAR_RECETAS);
