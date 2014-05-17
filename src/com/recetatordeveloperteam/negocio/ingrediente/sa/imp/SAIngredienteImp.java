@@ -1,6 +1,12 @@
 package com.recetatordeveloperteam.negocio.ingrediente.sa.imp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import com.google.appengine.api.datastore.Key;
 import com.recetatordeveloperteam.integracion.EMF.EMF;
@@ -33,4 +39,23 @@ public class SAIngredienteImp implements SAIngrediente
 		return ingredienteInsertado != null ? ingredienteInsertado.getId() : null;
 	}
 
+	@Override
+	public List<Ingrediente> getAllIngredientes()
+	{
+			List<Ingrediente> lista = new ArrayList<>();
+
+			EntityManager em = EMF.get().createEntityManager();
+
+			CriteriaBuilder criteriaB = em.getCriteriaBuilder();
+			CriteriaQuery<Ingrediente> query = criteriaB.createQuery(Ingrediente.class);
+			Root<Ingrediente> entityRoot = query.from(Ingrediente.class);
+			query.select(entityRoot);
+
+			em.getTransaction().begin();
+			lista = em.createQuery(query).getResultList();
+			em.getTransaction().commit();
+
+			return lista;
+		
+	}
 }

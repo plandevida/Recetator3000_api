@@ -10,7 +10,6 @@ import com.recetatordeveloperteam.presentacion.comandos.Comando;
 import com.recetatordeveloperteam.presentacion.comandos.ComandoRespuesta;
 import com.recetatordeveloperteam.presentacion.comandos.IDEventos;
 import com.recetatordeveloperteam.presentacion.comandos.factoria.FactoriaComandos;
-import com.recetatordeveloperteam.presentacion.comandos.factoria.imp.FactoriaComandosImp;
 import com.recetatordeveloperteam.presentacion.controlador.aplicacion.ControladorAplicacion;
 
 public class ControladorAplicacionImp extends ControladorAplicacion {
@@ -38,6 +37,7 @@ public class ControladorAplicacionImp extends ControladorAplicacion {
 			m = req.getParameterMap();
 			
 			break;
+			
 		case "/getrecetas":	
 			comando = FactoriaComandos.getInstance().nuevoComando(
 					IDEventos.EVENTO_LISTAR_RECETAS);

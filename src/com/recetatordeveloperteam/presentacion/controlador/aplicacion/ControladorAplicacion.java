@@ -1,10 +1,6 @@
 package com.recetatordeveloperteam.presentacion.controlador.aplicacion;
 
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.recetatordeveloperteam.presentacion.comandos.IDEventos;
 import com.recetatordeveloperteam.presentacion.controlador.aplicacion.imp.ControladorAplicacionImp;
 
 public abstract class ControladorAplicacion extends HttpServlet {
