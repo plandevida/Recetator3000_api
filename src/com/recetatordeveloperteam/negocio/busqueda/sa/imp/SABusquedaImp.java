@@ -14,7 +14,7 @@ public class SABusquedaImp implements SABusqueda
 {
 
 	@Override
-	public List<Receta> buscarPorIngredientes(List<Ingrediente> ingredientes) 
+	public List<Receta> buscarPorIngredientes(List<Ingrediente> ingredientes, int modo) 
 	{
 		// TODO Auto-generated method stub
 		return null;
@@ -49,7 +49,7 @@ public class SABusquedaImp implements SABusqueda
 	}
 
 	@Override
-	public List<Receta> buscarPorDificultad(List<Dificultades> dificultades) 
+	public List<Receta> buscarPorDificultad(Dificultades dificultades) 
 	{
 		// TODO Auto-generated method stub
 		return null;
