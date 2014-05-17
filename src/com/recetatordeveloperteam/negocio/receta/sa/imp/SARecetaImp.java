@@ -17,8 +17,10 @@ import com.recetatordeveloperteam.negocio.alergia.Alergia;
 import com.recetatordeveloperteam.negocio.alergia.AlergiaReceta;
 import com.recetatordeveloperteam.negocio.categoria.CategoriaReceta;
 import com.recetatordeveloperteam.negocio.ingrediente.IngredienteReceta;
+import com.recetatordeveloperteam.negocio.ingrediente.Ingrediente_;
 import com.recetatordeveloperteam.negocio.receta.entidad.Dificultades;
 import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
+import com.recetatordeveloperteam.negocio.receta.entidad.Receta_;
 import com.recetatordeveloperteam.negocio.receta.entidad.TipoCocina;
 import com.recetatordeveloperteam.negocio.receta.sa.SAReceta;
 
@@ -73,7 +75,7 @@ public class SARecetaImp implements SAReceta {
 
 		return recetaInsertada != null ? recetaInsertada.getId() : null;
 	}
-
+	
 	@Override
 	public List<Receta> getAllRecetas() {
 
@@ -84,6 +86,7 @@ public class SARecetaImp implements SAReceta {
 		CriteriaBuilder criteriaB = em.getCriteriaBuilder();
 		CriteriaQuery<Receta> query = criteriaB.createQuery(Receta.class);
 		Root<Receta> entityRoot = query.from(Receta.class);
+		// PRUEBA query.where(criteriaB.equal(entityRoot.get(Receta_.nombre), "Mi receta mágica"));
 		query.select(entityRoot);
 
 		em.getTransaction().begin();
@@ -92,7 +95,6 @@ public class SARecetaImp implements SAReceta {
 
 		return lista;
 	}
-
 	@Override
 	public JSONObject getAlergias() {
 		
