@@ -11,8 +11,16 @@ import com.recetatordeveloperteam.negocio.receta.entidad.Receta;
 public class IngredienteReceta {
 
 	@OneToOne
-	private Receta receta;
+	private Ingrediente ingrediente;
 	
+	public Ingrediente getReceta() {
+		return ingrediente;
+	}
+
+	public void setIngrediente(Ingrediente receta) {
+		this.ingrediente = receta;
+	}
+
 	private float cantidad;
 
 	public float getCantidad() 
