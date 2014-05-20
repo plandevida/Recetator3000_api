@@ -29,7 +29,7 @@ public class ComandoAltaReceta implements Comando {
 		 * Integer numeroCalorias, Float tiempoPreparacion, Alergias alergia);
 		 */
 
-		cr.setDatos(FactorySA.getInstance().getSARecetas().addReceta("asd"));
+		cr.setDatos(FactorySA.getInstance().getSARecetas().addReceta(map1.get("nombrereceta")[0]));
 		cr.setEvento(IDEventos.EVENTO_ALTA_RECETA);
 
 		return cr;
